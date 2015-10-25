@@ -4,7 +4,7 @@
   <subtitle><![CDATA[you can do more than you think]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://zxr12748.github.io/"/>
-  <updated>2015-10-25T15:19:55.000Z</updated>
+  <updated>2015-10-25T15:50:36.000Z</updated>
   <id>https://zxr12748.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://zxr12748.github.io/2015/10/25/build-a-blog/"/>
     <id>https://zxr12748.github.io/2015/10/25/build-a-blog/</id>
     <published>2015-10-25T13:27:38.000Z</published>
-    <updated>2015-10-25T15:19:55.000Z</updated>
+    <updated>2015-10-25T15:50:36.000Z</updated>
     <content type="html"><![CDATA[<p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~</p>
 <p>####造好轮子的前提是找到好轮子<br>&#160;&#160;&#160;&#160;对于我这样一个纯网页小白，git菜鸟来说，简单、文档全的轮子模板是个好选择，所以我找到了<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo</a>，官方说法是一个快速、简洁且高效的博客框架，而且文档齐全，中英文都有.</p>
 <p>#####安装环境</p>
@@ -35,7 +35,17 @@
 <blockquote>
 <p>$ hexo init <em>folder</em><br>$ cd folder<br>$ npm install</p>
 </blockquote>
-<p>这时候我们的博客雏形实际上已经搭好了。文件内已经由hexo帮我们生成了建站所有需要的文件。</p>
+<p>这时候我们的博客雏形实际上已经搭好了。文件内已经由hexo帮我们生成了建站所有需要的文件。<br>作为一个小白，文件夹里一堆东西真是让人感觉都是些什么鬼！还好我们有万能的文档和更万能的google。实际写博客时，我们只需要关注三样就可以了。</p>
+<p>#####<strong>_config.yml</strong><br>网站的配置信息，可以配置绝大部分的<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">参数</a>.<br>我们肯定需要改的一般是：</p>
+<blockquote>
+<p>title: your website title<br>subtitle: XXXXXXX<br>author: your name<br>url: #你挂靠网页的网址（这个我们下文会提到）</p>
+</blockquote>
+<p>别的可以暂时用默认值。<br>其中</p>
+<blockquote>
+<p>theme: defaulttheme #这个值跟我们马上要提到的主题相关。</p>
+</blockquote>
+<p>最重要的是！<br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br>我就不说这个小小的问题坑了我多久，单蠢的小白也是需要关怀的TAT</p>
+<p>剩下两个目前就需要我们关注的是文件夹：<br><strong>source</strong>： 存放我们写的文章和草稿<br><strong><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">themes</a></strong>： 主题文件夹。hexo就是根据它来生成我们的网页页面。网站到底长啥样，就靠他了，链接里有很多别人提供的主题模板，可以按照自己的喜好选择，如果觉得这样不好挑，<a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">知乎</a>里有别人整理的星级排行，可以参考。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，]]>
