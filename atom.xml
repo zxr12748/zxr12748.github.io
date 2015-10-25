@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[You can do more than you think]]></title>
-  <subtitle><![CDATA[Lzzrxz's blog]]></subtitle>
+  <title><![CDATA[Lzzrxz]]></title>
+  <subtitle><![CDATA[you can do more than you think]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://zxr12748.github.io/"/>
-  <updated>2015-10-25T09:26:07.000Z</updated>
+  <updated>2015-10-25T15:19:55.000Z</updated>
   <id>https://zxr12748.github.io/</id>
   
   <author>
@@ -15,37 +15,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[What's new here?]]></title>
-    <link href="https://zxr12748.github.io/2015/10/25/blog/"/>
-    <id>https://zxr12748.github.io/2015/10/25/blog/</id>
-    <published>2015-10-25T08:47:12.000Z</published>
-    <updated>2015-10-25T09:26:07.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="test_for_the_incoming_blog">test for the incoming blog</h3>]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="test_for_the_incoming_blog">test for the incoming blog</h3>]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="https://zxr12748.github.io/2015/10/25/hello-world/"/>
-    <id>https://zxr12748.github.io/2015/10/25/hello-world/</id>
-    <published>2015-10-25T08:18:30.000Z</published>
-    <updated>2015-10-25T08:18:30.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <title><![CDATA[搭建一个自己的独立博客]]></title>
+    <link href="https://zxr12748.github.io/2015/10/25/build-a-blog/"/>
+    <id>https://zxr12748.github.io/2015/10/25/build-a-blog/</id>
+    <published>2015-10-25T13:27:38.000Z</published>
+    <updated>2015-10-25T15:19:55.000Z</updated>
+    <content type="html"><![CDATA[<p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~</p>
+<p>####造好轮子的前提是找到好轮子<br>&#160;&#160;&#160;&#160;对于我这样一个纯网页小白，git菜鸟来说，简单、文档全的轮子模板是个好选择，所以我找到了<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo</a>，官方说法是一个快速、简洁且高效的博客框架，而且文档齐全，中英文都有.</p>
+<p>#####安装环境</p>
+<p>OSX 10.11.1 </p>
+<p>#####安装前提</p>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 直接在Node.js官网下载了pkg，双击安装。<br>Git 电脑上默认就装好了。</p>
+<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入</p>
+<blockquote>
+<p>$ npm install -g hexo-cli</p>
+</blockquote>
+<p>OK, 视个人网速等一小会之后，hexo就安装完毕，这时候我们就可以开始建站大业了。</p>
+<p>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入</p>
+<blockquote>
+<p>$ hexo init <em>folder</em><br>$ cd folder<br>$ npm install</p>
+</blockquote>
+<p>这时候我们的博客雏形实际上已经搭好了。文件内已经由hexo帮我们生成了建站所有需要的文件。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    <![CDATA[<p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，]]>
     </summary>
+    
+      <category term="其他" scheme="https://zxr12748.github.io/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
