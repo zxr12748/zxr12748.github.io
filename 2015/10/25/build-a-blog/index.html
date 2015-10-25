@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Lzzrxz">
 <meta property="og:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~
 ##">
-<meta property="og:updated_time" content="2015-10-25T15:50:36.000Z">
+<meta property="og:updated_time" content="2015-10-25T16:06:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建一个自己的独立博客">
 <meta name="twitter:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~
@@ -117,26 +117,17 @@ ga('send', 'pageview');
 <p>OSX 10.11.1 </p>
 <p>#####安装前提</p>
 <p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 直接在Node.js官网下载了pkg，双击安装。<br>Git 电脑上默认就装好了。</p>
-<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入</p>
-<blockquote>
-<p>$ npm install -g hexo-cli</p>
-</blockquote>
+<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入<br>` $ npm install -g hexo-cli</p>
 <p>OK, 视个人网速等一小会之后，hexo就安装完毕，这时候我们就可以开始建站大业了。</p>
-<p>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入</p>
-<blockquote>
-<p>$ hexo init <em>folder</em><br>$ cd folder<br>$ npm install</p>
-</blockquote>
+<p>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init _folder_</span><br><span class="line"><span class="variable">$ </span>cd folder</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure></p>
 <p>这时候我们的博客雏形实际上已经搭好了。文件内已经由hexo帮我们生成了建站所有需要的文件。<br>作为一个小白，文件夹里一堆东西真是让人感觉都是些什么鬼！还好我们有万能的文档和更万能的google。实际写博客时，我们只需要关注三样就可以了。</p>
-<p>#####<strong>_config.yml</strong><br>网站的配置信息，可以配置绝大部分的<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">参数</a>.<br>我们肯定需要改的一般是：</p>
-<blockquote>
-<p>title: your website title<br>subtitle: XXXXXXX<br>author: your name<br>url: #你挂靠网页的网址（这个我们下文会提到）</p>
-</blockquote>
+<p>#####<strong>_config.yml</strong><br>网站的配置信息，可以配置绝大部分的<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">参数</a>.<br>我们肯定需要改的一般是：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">title</span>: <span class="string">your website title</span></span><br><span class="line"><span class="attribute">subtitle</span>: <span class="string">XXXXXXX </span></span><br><span class="line"><span class="attribute">author</span>: <span class="string">your name</span></span><br><span class="line"><span class="attribute">url</span>: <span class="string">#你挂靠网页的网址（这个我们下文会提到）</span></span><br></pre></td></tr></table></figure></p>
 <p>别的可以暂时用默认值。<br>其中</p>
-<blockquote>
-<p>theme: defaulttheme #这个值跟我们马上要提到的主题相关。</p>
-</blockquote>
+<p>` theme: defaulttheme #这个值跟我们马上要提到的主题相关。</p>
 <p>最重要的是！<br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br>我就不说这个小小的问题坑了我多久，单蠢的小白也是需要关怀的TAT</p>
 <p>剩下两个目前就需要我们关注的是文件夹：<br><strong>source</strong>： 存放我们写的文章和草稿<br><strong><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">themes</a></strong>： 主题文件夹。hexo就是根据它来生成我们的网页页面。网站到底长啥样，就靠他了，链接里有很多别人提供的主题模板，可以按照自己的喜好选择，如果觉得这样不好挑，<a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">知乎</a>里有别人整理的星级排行，可以参考。</p>
+<p>现在先不管他，再次回到terminal，输入:</p>
+<p>tbc</p>
 
       
     </div>
