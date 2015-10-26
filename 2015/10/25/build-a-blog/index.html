@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Lzzrxz">
 <meta property="og:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~
 ##">
-<meta property="og:updated_time" content="2015-10-26T13:05:58.000Z">
+<meta property="og:updated_time" content="2015-10-26T13:16:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="零基础搭建一个属于自己的独立博客">
 <meta name="twitter:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~
@@ -117,17 +117,28 @@ ga('send', 'pageview');
 <p>OSX 10.11.1 </p>
 <p>#####安装前提</p>
 <p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 直接在Node.js官网下载了pkg，双击安装。<br>Git 电脑上默认就装好了。</p>
-<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入<br><figure class="highlight"><figcaption><span>npm install -g hexo-cli</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```&#10;&#10;OK, &#35270;&#20010;&#20154;&#32593;&#36895;&#31561;&#19968;&#23567;&#20250;&#20043;&#21518;&#65292;hexo&#23601;&#23433;&#35013;&#23436;&#27605;&#65292;&#36825;&#26102;&#20505;&#25105;&#20204;&#23601;&#21487;&#20197;&#24320;&#22987;&#24314;&#31449;&#22823;&#19994;&#20102;&#12290;&#10;&#10;#####&#24314;&#31449;&#10;&#20808;&#22312;&#33258;&#24049;&#21916;&#27426;&#30340;&#20219;&#20309;&#22320;&#26041;&#24314;&#19968;&#20010;&#25991;&#20214;&#22841;_folder_,&#32456;&#31471;&#20013;&#36755;&#20837;&#10;``` &#10;$ hexo init _folder_&#10;$ cd folder&#10;$ npm install</span><br></pre></td></tr></table></figure></p>
+<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入<br>     $ npm install -g hexo-cli</p>
+<p>OK, 视个人网速等一小会之后，hexo就安装完毕，这时候我们就可以开始建站大业了。</p>
+<p>#####建站<br>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init _folder_</span><br><span class="line"><span class="variable">$ </span>cd folder</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure></p>
 <p>这时候我们的博客雏形实际上已经搭好了。文件内已经由hexo帮我们生成了建站所有需要的文件。<br>作为一个小白，文件夹里一堆东西真是让人感觉都是些什么鬼！还好我们有万能的文档和更万能的google。实际写博客时，我们只需要关注三样就可以了。</p>
 <p>首先，我们需要关注根目录下的<strong>_config.yml</strong>文件<br>它包括了网站的配置信息，可以配置绝大部分的<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">参数</a>.<br>我们肯定需要改的一般是：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">title</span>: <span class="string">your website title</span></span><br><span class="line"><span class="attribute">subtitle</span>: <span class="string">XXXXXXX </span></span><br><span class="line"><span class="attribute">author</span>: <span class="string">your name</span></span><br><span class="line"><span class="attribute">url</span>: <span class="string">#你挂靠网页的网址（这个我们下文会提到）</span></span><br></pre></td></tr></table></figure></p>
 <p>别的可以暂时用默认值。<br>其中</p>
-<figure class="highlight"><figcaption><span>defaulttheme #这个值跟我们马上要提到的主题相关。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```&#10;&#10;&#26368;&#37325;&#35201;&#30340;&#26159;&#65281;&#10;**&#20882;&#21495;&#21518;&#38754;&#19968;&#23450;&#35201;&#25970;&#19968;&#20010;&#33521;&#25991;&#21322;&#35282;&#30340;&#31354;&#26684;&#65281;**&#10;**&#20882;&#21495;&#21518;&#38754;&#19968;&#23450;&#35201;&#25970;&#19968;&#20010;&#33521;&#25991;&#21322;&#35282;&#30340;&#31354;&#26684;&#65281;**&#10;**&#20882;&#21495;&#21518;&#38754;&#19968;&#23450;&#35201;&#25970;&#19968;&#20010;&#33521;&#25991;&#21322;&#35282;&#30340;&#31354;&#26684;&#65281;**&#10;&#25105;&#23601;&#19981;&#35828;&#36825;&#20010;&#23567;&#23567;&#30340;&#38382;&#39064;&#22353;&#20102;&#25105;&#22810;&#20037;&#65292;&#21333;&#34850;&#30340;&#23567;&#30333;&#20063;&#26159;&#38656;&#35201;&#20851;&#24576;&#30340;TAT&#10;&#10;&#21097;&#19979;&#30446;&#21069;&#23601;&#38656;&#35201;&#25105;&#20204;&#20851;&#27880;&#30340;&#26159;&#20004;&#20010;&#25991;&#20214;&#22841;&#65306;&#10;**source**&#65306; &#23384;&#25918;&#25105;&#20204;&#20889;&#30340;&#25991;&#31456;&#21644;&#33609;&#31295;&#10;**[themes][4]**&#65306; &#20027;&#39064;&#25991;&#20214;&#22841;&#12290;hexo&#23601;&#26159;&#26681;&#25454;&#23427;&#26469;&#29983;&#25104;&#25105;&#20204;&#30340;&#32593;&#39029;&#39029;&#38754;&#12290;&#32593;&#31449;&#21040;&#24213;&#38271;&#21861;&#26679;&#65292;&#23601;&#38752;&#20182;&#20102;&#65292;&#38142;&#25509;&#37324;&#26377;&#24456;&#22810;&#21035;&#20154;&#25552;&#20379;&#30340;&#20027;&#39064;&#27169;&#26495;&#65292;&#21487;&#20197;&#25353;&#29031;&#33258;&#24049;&#30340;&#21916;&#22909;&#36873;&#25321;&#65292;&#22914;&#26524;&#35273;&#24471;&#36825;&#26679;&#19981;&#22909;&#25361;&#65292;[&#30693;&#20046;][5]&#37324;&#26377;&#21035;&#20154;&#25972;&#29702;&#30340;&#26143;&#32423;&#25490;&#34892;&#65292;&#21487;&#20197;&#21442;&#32771;&#12290;&#10;&#10;&#10;&#10;&#29616;&#22312;&#20808;&#19981;&#31649;&#36825;&#20004;&#20010;&#25991;&#20214;&#22841;&#65292;&#20877;&#27425;&#22238;&#21040;terminal&#65292;&#36755;&#20837;:</span><br></pre></td></tr></table></figure>
-<p>$ hexo d -g<br>$ hexo server<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">其中 d 指<span class="keyword">*</span>deploy<span class="keyword">*</span> 也就是部署，-g 指<span class="keyword">*</span>generate<span class="keyword">*</span>，表示如果部署时还没生成静态页面就先执行<span class="keyword">*</span>generate<span class="keyword">*</span>，这实际上是两个操作，我们这里一步来完成。等一小段时间，网页就部署好了，这时输入第二行代码，terminal上显示：</span><br></pre></td></tr></table></figure></p>
-<p>INFO  Hexo is running at <a href="http://0.0.0.0:4000/" target="_blank" rel="external">http://0.0.0.0:4000/</a>. Press Ctrl+C to stop.</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">我们在浏览器中输入[http://0.0.0.0:4000/]，就能看到刚才部署的页面了，也就是我们博客的样子~。</span><br><span class="line"></span><br><span class="line">现在只能本地访问，如果我们希望其他人也能看到，就需要将网页部署到某个服务器上去。我选择了github,其他方式操作应该是类似。</span><br><span class="line"></span><br><span class="line"><span class="header">#####部署</span></span><br><span class="line"></span><br><span class="line">首先需要注册一个github的账号，然后follow [<span class="link_label">Github Page</span>][<span class="link_reference">6</span>]这上面的步骤，我们就能获得一个类似于</span><br><span class="line">http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。</span><br><span class="line">这时，打开根目录下的<span class="strong">**_config.yml**</span>，在上文提到过的<span class="emphasis">*url:*</span>后填入</span><br></pre></td></tr></table></figure>
-<p>url: <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a> #对应你自己的地址<br>root: /<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在文件底部的<span class="keyword">*</span>deploy<span class="keyword">*</span>填入：</span><br></pre></td></tr></table></figure></p>
-<p>deploy:<br>    type: git<br>    repo: <repositoty url=""> #前面获得域名时创建的repository地址<br>    branch: [branch] #要发布内容的分支，一般是master<br>    message: [message] ##自定义提交信息，留空就可以。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这时我们再打开terminal，输入</span><br></pre></td></tr></table></figure></repositoty></p>
-<p>$ hexo d -g<br>```<br>网页就部署到<a href="http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。" target="_blank" rel="external">http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。</a></p>
+<pre><code><span class="label">theme:</span> defaulttheme <span class="preprocessor">#这个值跟我们马上要提到的主题相关。</span>
+</code></pre><p>最重要的是！<br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br><strong>冒号后面一定要敲一个英文半角的空格！</strong><br>我就不说这个小小的问题坑了我多久，单蠢的小白也是需要关怀的TAT</p>
+<p>剩下目前就需要我们关注的是两个文件夹：<br><strong>source</strong>： 存放我们写的文章和草稿<br><strong><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">themes</a></strong>： 主题文件夹。hexo就是根据它来生成我们的网页页面。网站到底长啥样，就靠他了，链接里有很多别人提供的主题模板，可以按照自己的喜好选择，如果觉得这样不好挑，<a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">知乎</a>里有别人整理的星级排行，可以参考。</p>
+<p>现在先不管这两个文件夹，再次回到terminal，输入:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo d -g</span><br><span class="line"><span class="variable">$ </span>hexo server</span><br></pre></td></tr></table></figure>
+<p>其中 d 指<em>deploy</em> 也就是部署，-g 指<em>generate</em>，表示如果部署时还没生成静态页面就先执行<em>generate</em>，这实际上是两个操作，我们这里一步来完成。等一小段时间，网页就部署好了，这时输入第二行代码，terminal上显示：</p>
+<pre><code>INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.
+</code></pre><p>我们在浏览器中输入[<a href="http://0.0.0.0:4000/]，就能看到刚才部署的页面了，也就是我们博客的样子~。" target="_blank" rel="external">http://0.0.0.0:4000/]，就能看到刚才部署的页面了，也就是我们博客的样子~。</a></p>
+<p>现在只能本地访问，如果我们希望其他人也能看到，就需要将网页部署到某个服务器上去。我选择了github,其他方式操作应该是类似。</p>
+<p>#####部署</p>
+<p>首先需要注册一个github的账号，然后follow <a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>这上面的步骤，我们就能获得一个类似于<br><a href="http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。" target="_blank" rel="external">http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。</a><br>这时，打开根目录下的<strong>_config.yml</strong>，在上文提到过的<em>url:</em>后填入<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">http:</span><span class="comment">//username.github.io #对应你自己的地址</span></span><br><span class="line"><span class="string">root:</span> /</span><br></pre></td></tr></table></figure></p>
+<p>在文件底部的<em>deploy</em>填入：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: &lt;repositoty url&gt; <span class="comment">#前面获得域名时创建的repository地址</span></span><br><span class="line">    branch: [branch] <span class="comment">#要发布内容的分支，一般是master</span></span><br><span class="line">    <span class="keyword">message</span>: [<span class="keyword">message</span>] <span class="comment">##自定义提交信息，留空就可以。</span></span><br></pre></td></tr></table></figure>
+<p>这时我们再打开terminal，输入</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">d</span> -<span class="keyword">g</span></span><br></pre></td></tr></table></figure>
+<p>网页就部署到<a href="http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。" target="_blank" rel="external">http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。</a></p>
 <p>至此，博客建站完毕:-D</p>
 <p>#####写博客</p>
 <p>怎么写就很简单了，在前文提过的source文件夹下，新建一个 *.md文件，想写的内容填进去，重新生成、部署，稍等一小会会，就能看到我们更新的博客啦。</p>
@@ -137,7 +148,7 @@ ga('send', 'pageview');
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://zxr12748.github.io/2015/10/25/build-a-blog/" data-id="cig6nwcn40000f4s6xfk5z9qh" class="article-share-link" data-share="baidu">分享到</a>
+        <a data-url="https://zxr12748.github.io/2015/10/25/build-a-blog/" data-id="cig7yxzmv00001xs6c7olqh76" class="article-share-link" data-share="baidu">分享到</a>
       
 
       
@@ -151,6 +162,20 @@ ga('send', 'pageview');
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/10/26/light-field/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          光场相机原理
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -170,7 +195,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/光学/">光学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -179,7 +204,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/其他/" style="font-size: 10px;">其他</a>
+      <a href="/tags/光学/" style="font-size: 10px;">光学</a> <a href="/tags/其他/" style="font-size: 10px;">其他</a>
     </div>
   </div>
 
@@ -188,7 +213,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -198,6 +223,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/10/26/light-field/">光场相机原理</a>
+          </li>
         
           <li>
             <a href="/2015/10/25/build-a-blog/">零基础搭建一个属于自己的独立博客</a>
