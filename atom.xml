@@ -4,7 +4,7 @@
   <subtitle><![CDATA[you can do more than you think]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://zxr12748.github.io/"/>
-  <updated>2015-10-26T12:59:09.000Z</updated>
+  <updated>2015-10-26T13:05:58.000Z</updated>
   <id>https://zxr12748.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="https://zxr12748.github.io/2015/10/25/build-a-blog/"/>
     <id>https://zxr12748.github.io/2015/10/25/build-a-blog/</id>
     <published>2015-10-25T13:27:38.000Z</published>
-    <updated>2015-10-26T12:59:09.000Z</updated>
+    <updated>2015-10-26T13:05:58.000Z</updated>
     <content type="html"><![CDATA[<p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~</p>
 <p>####造好轮子的前提是找到好轮子<br>&#160;&#160;&#160;&#160;对于我这样一个纯网页小白，git菜鸟来说，简单、文档全的轮子模板是个好选择，所以我找到了<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo</a>，官方说法是一个快速、简洁且高效的博客框架，而且文档齐全，中英文都有.<br><a id="more"></a></p>
 <p>#####安装环境</p>
@@ -38,6 +38,9 @@
 <p>deploy:<br>    type: git<br>    repo: <repositoty url=""> #前面获得域名时创建的repository地址<br>    branch: [branch] #要发布内容的分支，一般是master<br>    message: [message] ##自定义提交信息，留空就可以。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这时我们再打开terminal，输入</span><br></pre></td></tr></table></figure></repositoty></p>
 <p>$ hexo d -g<br>```<br>网页就部署到<a href="http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。" target="_blank" rel="external">http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。</a></p>
 <p>至此，博客建站完毕:-D</p>
+<p>#####写博客</p>
+<p>怎么写就很简单了，在前文提过的source文件夹下，新建一个 *.md文件，想写的内容填进去，重新生成、部署，稍等一小会会，就能看到我们更新的博客啦。</p>
+<p>#####其他插件<br>其他还有一些博客的管理内容，比如google analytical统计，disqus评论栏，都可以很简单的添加到页面中。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~</p>
