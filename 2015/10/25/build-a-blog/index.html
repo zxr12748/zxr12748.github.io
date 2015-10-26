@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Lzzrxz">
 <meta property="og:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~
 ##">
-<meta property="og:updated_time" content="2015-10-26T13:16:53.000Z">
+<meta property="og:updated_time" content="2015-10-26T13:48:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="零基础搭建一个属于自己的独立博客">
 <meta name="twitter:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~
@@ -113,13 +113,12 @@ ga('send', 'pageview');
       
         <p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~</p>
 <p>####造好轮子的前提是找到好轮子<br>&#160;&#160;&#160;&#160;对于我这样一个纯网页小白，git菜鸟来说，简单、文档全的轮子模板是个好选择，所以我找到了<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo</a>，官方说法是一个快速、简洁且高效的博客框架，而且文档齐全，中英文都有.<br><a id="more"></a></p>
-<p>#####安装环境</p>
-<p>OSX 10.11.1 </p>
-<p>#####安装前提</p>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 直接在Node.js官网下载了pkg，双击安装。<br>Git 电脑上默认就装好了。</p>
-<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入<br>     $ npm install -g hexo-cli</p>
-<p>OK, 视个人网速等一小会之后，hexo就安装完毕，这时候我们就可以开始建站大业了。</p>
-<p>#####建站<br>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init _folder_</span><br><span class="line"><span class="variable">$ </span>cd folder</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure></p>
+<h5 id="安装环境">安装环境</h5><p>OSX 10.11.1 </p>
+<h5 id="安装前提">安装前提</h5><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 直接在Node.js官网下载了pkg，双击安装。<br>Git 电脑上默认就装好了。</p>
+<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入</p>
+<pre><code>$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo-cli</span>
+</code></pre><p>OK, 视个人网速等一小会之后，hexo就安装完毕，这时候我们就可以开始建站大业了。</p>
+<h5 id="建站">建站</h5><p>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init _folder_</span><br><span class="line"><span class="variable">$ </span>cd folder</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure></p>
 <p>这时候我们的博客雏形实际上已经搭好了。文件内已经由hexo帮我们生成了建站所有需要的文件。<br>作为一个小白，文件夹里一堆东西真是让人感觉都是些什么鬼！还好我们有万能的文档和更万能的google。实际写博客时，我们只需要关注三样就可以了。</p>
 <p>首先，我们需要关注根目录下的<strong>_config.yml</strong>文件<br>它包括了网站的配置信息，可以配置绝大部分的<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">参数</a>.<br>我们肯定需要改的一般是：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">title</span>: <span class="string">your website title</span></span><br><span class="line"><span class="attribute">subtitle</span>: <span class="string">XXXXXXX </span></span><br><span class="line"><span class="attribute">author</span>: <span class="string">your name</span></span><br><span class="line"><span class="attribute">url</span>: <span class="string">#你挂靠网页的网址（这个我们下文会提到）</span></span><br></pre></td></tr></table></figure></p>
 <p>别的可以暂时用默认值。<br>其中</p>
@@ -130,18 +129,16 @@ ga('send', 'pageview');
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo d -g</span><br><span class="line"><span class="variable">$ </span>hexo server</span><br></pre></td></tr></table></figure>
 <p>其中 d 指<em>deploy</em> 也就是部署，-g 指<em>generate</em>，表示如果部署时还没生成静态页面就先执行<em>generate</em>，这实际上是两个操作，我们这里一步来完成。等一小段时间，网页就部署好了，这时输入第二行代码，terminal上显示：</p>
 <pre><code>INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.
-</code></pre><p>我们在浏览器中输入[<a href="http://0.0.0.0:4000/]，就能看到刚才部署的页面了，也就是我们博客的样子~。" target="_blank" rel="external">http://0.0.0.0:4000/]，就能看到刚才部署的页面了，也就是我们博客的样子~。</a></p>
+</code></pre><p>我们在浏览器中输入[<a href="http://0.0.0.0:4000]，就能看到刚才部署的页面了，也就是我们博客的样子~。" target="_blank" rel="external">http://0.0.0.0:4000]，就能看到刚才部署的页面了，也就是我们博客的样子~。</a></p>
 <p>现在只能本地访问，如果我们希望其他人也能看到，就需要将网页部署到某个服务器上去。我选择了github,其他方式操作应该是类似。</p>
-<p>#####部署</p>
-<p>首先需要注册一个github的账号，然后follow <a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>这上面的步骤，我们就能获得一个类似于<br><a href="http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。" target="_blank" rel="external">http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。</a><br>这时，打开根目录下的<strong>_config.yml</strong>，在上文提到过的<em>url:</em>后填入<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">http:</span><span class="comment">//username.github.io #对应你自己的地址</span></span><br><span class="line"><span class="string">root:</span> /</span><br></pre></td></tr></table></figure></p>
+<h5 id="部署">部署</h5><p>首先需要注册一个github的账号，然后follow <a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>这上面的步骤，我们就能获得一个类似于<br><a href="http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。" target="_blank" rel="external">http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。</a><br>这时，打开根目录下的<strong>_config.yml</strong>，在上文提到过的<em>url:</em>后填入<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">http:</span><span class="comment">//username.github.io #对应你自己的地址</span></span><br><span class="line"><span class="string">root:</span> /</span><br></pre></td></tr></table></figure></p>
 <p>在文件底部的<em>deploy</em>填入：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: &lt;repositoty url&gt; <span class="comment">#前面获得域名时创建的repository地址</span></span><br><span class="line">    branch: [branch] <span class="comment">#要发布内容的分支，一般是master</span></span><br><span class="line">    <span class="keyword">message</span>: [<span class="keyword">message</span>] <span class="comment">##自定义提交信息，留空就可以。</span></span><br></pre></td></tr></table></figure>
 <p>这时我们再打开terminal，输入</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">d</span> -<span class="keyword">g</span></span><br></pre></td></tr></table></figure>
 <p>网页就部署到<a href="http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。" target="_blank" rel="external">http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。</a></p>
 <p>至此，博客建站完毕:-D</p>
-<p>#####写博客</p>
-<p>怎么写就很简单了，在前文提过的source文件夹下，新建一个 *.md文件，想写的内容填进去，重新生成、部署，稍等一小会会，就能看到我们更新的博客啦。</p>
+<h5 id="写博客">写博客</h5><p>怎么写就很简单了，在前文提过的source文件夹下，新建一个 *.md文件，想写的内容填进去，重新生成、部署，稍等一小会会，就能看到我们更新的博客啦。</p>
 <p>#####其他插件<br>其他还有一些博客的管理内容，比如google analytical统计，disqus评论栏，都可以很简单的添加到页面中。</p>
 
       

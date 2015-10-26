@@ -4,7 +4,7 @@
   <subtitle><![CDATA[you can do more than you think]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://zxr12748.github.io/"/>
-  <updated>2015-10-26T13:11:00.000Z</updated>
+  <updated>2015-10-26T14:25:02.000Z</updated>
   <id>https://zxr12748.github.io/</id>
   
   <author>
@@ -19,11 +19,24 @@
     <link href="https://zxr12748.github.io/2015/10/26/light-field/"/>
     <id>https://zxr12748.github.io/2015/10/26/light-field/</id>
     <published>2015-10-26T13:06:46.000Z</published>
-    <updated>2015-10-26T13:11:00.000Z</updated>
-    <content type="html"><![CDATA[<p>###1.什么是光场？<br>&#160;&#160;&#160;&#160;简单的说，光场就是光线，它包含光线本身的强度、位置和方向等信息。一般采用两个相互平行的平面来表征光场，如图1所示。若一条光线通过两个平面UV和ST所产生的交点坐标分别为(u,v)和(s,t)，此时就可以通过光场函数L(u,v,s,t)来表示这条光线的分布。L代表光线的强度，而(u,v)和(s,t)共同确定了光线在空间中分布的位置和方向。</p>
+    <updated>2015-10-26T14:25:02.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="1-什么是光场？">1.什么是光场？</h3><p>&#160;&#160;&#160;&#160;简单的说，光场就是光线，它包含光线本身的强度、位置和方向等信息。一般采用两个相互平行的平面来表征光场，如图所示</p>
+<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevzbkm9lj20g505y74b.jpg" alt="" title="光场的双平面特征"></center>
+
+<p>若一条光线通过两个平面UV和ST所产生的交点坐标分别为(u,v)和(s,t)，此时就可以通过光场函数L(u,v,s,t)来表示这条光线的分布。L代表光线的强度，而(u,v)和(s,t)共同确定了光线在空间中分布的位置和方向。</p>
+<p>&#160;&#160;&#160;&#160;为什么要用这种双平面的方式来确定光场的分布呢？这是因为常规的相机一般都可以简化成两个互相平行的平面——镜头的光瞳面和图像传感器所在的像平面。对于常规的相机来说，每个像素记录了整个镜头所出射光线会聚在一个位置上的强度，如图所示.<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevv091khj209b08eq36.jpg" alt="" title="传统相机工作原理"></center>所以，传统的相机只能获取一个像平面的图像。而如果能够获取到整个相机内的光场分布情况，我们就可以将光线重新投影到一个虚拟的像平面上，计算出这个新的像平面上所产生的图像。光场相机的目的就在于对相机的光场分布进行记录。</p>
+<h3 id="2-光场相机是怎么工作的？">2.光场相机是怎么工作的？</h3><p>&#160;&#160;&#160;&#160;光场相机由镜头、微透镜阵列和图像传感器组成，其中微透镜阵列是多个微透镜单元所组成的二维阵列。镜头的光瞳面（UV面）和图像传感器的光敏面（XY面）关于微透镜阵列（ST）成共轭关系，也就是说，镜头经过每个微透镜单元都会投影到图像传感器上形成一个小的微透镜子图像。每个微透镜子图像包含了若干个像素，此时各像素所记录的光线强度就来自于一个微透镜和镜头的一个子孔径区域之间所限制的细光束，如图。<center><img src="http://ww4.sinaimg.cn/mw690/4780cba9jw1exevvoi569j20gp093q3l.jpg" alt="" title="光场相机的光学结构"></center>这里的细光束也就是光场的离散采样形式，通过微透镜单元的坐标ST和镜头子孔径的坐标UV即能够确定每个细光束的位置和方向，获得L(u,v,s,t)的分布。</p>
+<h3 id="3-怎么实现数字对焦？">3.怎么实现数字对焦？</h3><p>&#160;&#160;&#160;&#160;正如前面所说，获得相机内的光场分布后，就可以重新选择一个虚拟的像平面（如图，<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevwoau4dj20an04x74k.jpg" alt="" title="利用光场进行数字对焦"></center>&gt;<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevwyrtsej208704ujrl.jpg" alt="" title="利用光场进行数字对焦"></center>可以选择更远或更近的像面位置），计算出所有的光线在这个平面上的交点位置和能量分布，从而就得到了一幅新像面上的图像。这个过程等价于传统相机的调焦过程，只不过是通过数字计算来实现，因而被称为数字调焦。<br>&#160;&#160;&#160;&#160;利用光场相机的数字调焦能力，只需要一次曝光就可以计算出不同像平面位置的图像，能够实现大光圈条件下的快速对焦。更进一步，利用不同深度平面的图像序列，可以完成全景深图像合成、三维深度估计等功能。</p>
+<h3 id="4-对焦示例">4.对焦示例</h3><center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exevx8n6ucj207c04ymx9.jpg" alt="" title="原始对焦位置: 书"></center><center>原始对焦位置在书上</center><br><center><img src="http://ww2.sinaimg.cn/mw690/4780cba9jw1exevy46hzoj207c04ydfx.jpg" alt="" title="数字调焦到近处"></center><center>数字调焦到近处</center><br><center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exevyccjylj207e04y0st.jpg" alt="" title="数字调焦到远处"></center><center>数字调焦到远处</center>
+
+
+
+<h4 id="参考资料">参考资料</h4><p>周志良. 光场成像技术研究[D]. 中国科学技术大学, 2012.</p>
+<p><em>本文所有图片文字纯属原创，如有雷同，你抄我的:-D</em></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>###1.什么是光场？<br>&#160;&#160;&#160;&#160;简单的说，光场就是光线，它包含光线本身的强度、位置和方向等信息。一般采用两个相互平行的平面来表征光场，如图1所示。若一条光线通过两个平面UV和ST所产生的交点坐标分别为(u,v)和(s,t)，此时]]>
+    <![CDATA[<h3 id="1-什么是光场？">1.什么是光场？</h3><p>&#160;&#160;&#160;&#160;简单的说，光场就是光线，它包含光线本身的强度、位置和方向等信息。一般采用两个相互平行的平面来表征光场，如图所示</p>
+<center><img src="http]]>
     </summary>
     
       <category term="光学" scheme="https://zxr12748.github.io/tags/%E5%85%89%E5%AD%A6/"/>
@@ -35,16 +48,15 @@
     <link href="https://zxr12748.github.io/2015/10/25/build-a-blog/"/>
     <id>https://zxr12748.github.io/2015/10/25/build-a-blog/</id>
     <published>2015-10-25T13:27:38.000Z</published>
-    <updated>2015-10-26T13:16:53.000Z</updated>
+    <updated>2015-10-26T13:48:27.000Z</updated>
     <content type="html"><![CDATA[<p>&#160;&#160;&#160;&#160;事情的起因是因为换工作后，新boss要求定期将做的好的效果写成文章，内容要严肃活泼，既显得高大上有逼格，又能平易近人，让人民群众喜闻乐见，达到宣传公司的目的。我个人觉得这是一个很折磨人的要求，尤其对我这种几万年除了聊天敲代码，基本不敲别的字的人来说╮(╯▽╰)╭。所以……建个自己的博客吧，敲敲打打，看不下去空荡荡的首页，也许就愿意没事写几句呢~</p>
 <p>####造好轮子的前提是找到好轮子<br>&#160;&#160;&#160;&#160;对于我这样一个纯网页小白，git菜鸟来说，简单、文档全的轮子模板是个好选择，所以我找到了<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo</a>，官方说法是一个快速、简洁且高效的博客框架，而且文档齐全，中英文都有.<br><a id="more"></a></p>
-<p>#####安装环境</p>
-<p>OSX 10.11.1 </p>
-<p>#####安装前提</p>
-<p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 直接在Node.js官网下载了pkg，双击安装。<br>Git 电脑上默认就装好了。</p>
-<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入<br>     $ npm install -g hexo-cli</p>
-<p>OK, 视个人网速等一小会之后，hexo就安装完毕，这时候我们就可以开始建站大业了。</p>
-<p>#####建站<br>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init _folder_</span><br><span class="line"><span class="variable">$ </span>cd folder</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure></p>
+<h5 id="安装环境">安装环境</h5><p>OSX 10.11.1 </p>
+<h5 id="安装前提">安装前提</h5><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 直接在Node.js官网下载了pkg，双击安装。<br>Git 电脑上默认就装好了。</p>
+<p>安装好Node.js以后，使用npm完成对hexo的安装。打开终端，输入</p>
+<pre><code>$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo-cli</span>
+</code></pre><p>OK, 视个人网速等一小会之后，hexo就安装完毕，这时候我们就可以开始建站大业了。</p>
+<h5 id="建站">建站</h5><p>先在自己喜欢的任何地方建一个文件夹<em>folder</em>,终端中输入<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init _folder_</span><br><span class="line"><span class="variable">$ </span>cd folder</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure></p>
 <p>这时候我们的博客雏形实际上已经搭好了。文件内已经由hexo帮我们生成了建站所有需要的文件。<br>作为一个小白，文件夹里一堆东西真是让人感觉都是些什么鬼！还好我们有万能的文档和更万能的google。实际写博客时，我们只需要关注三样就可以了。</p>
 <p>首先，我们需要关注根目录下的<strong>_config.yml</strong>文件<br>它包括了网站的配置信息，可以配置绝大部分的<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">参数</a>.<br>我们肯定需要改的一般是：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">title</span>: <span class="string">your website title</span></span><br><span class="line"><span class="attribute">subtitle</span>: <span class="string">XXXXXXX </span></span><br><span class="line"><span class="attribute">author</span>: <span class="string">your name</span></span><br><span class="line"><span class="attribute">url</span>: <span class="string">#你挂靠网页的网址（这个我们下文会提到）</span></span><br></pre></td></tr></table></figure></p>
 <p>别的可以暂时用默认值。<br>其中</p>
@@ -55,18 +67,16 @@
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo d -g</span><br><span class="line"><span class="variable">$ </span>hexo server</span><br></pre></td></tr></table></figure>
 <p>其中 d 指<em>deploy</em> 也就是部署，-g 指<em>generate</em>，表示如果部署时还没生成静态页面就先执行<em>generate</em>，这实际上是两个操作，我们这里一步来完成。等一小段时间，网页就部署好了，这时输入第二行代码，terminal上显示：</p>
 <pre><code>INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.
-</code></pre><p>我们在浏览器中输入[<a href="http://0.0.0.0:4000/]，就能看到刚才部署的页面了，也就是我们博客的样子~。" target="_blank" rel="external">http://0.0.0.0:4000/]，就能看到刚才部署的页面了，也就是我们博客的样子~。</a></p>
+</code></pre><p>我们在浏览器中输入[<a href="http://0.0.0.0:4000]，就能看到刚才部署的页面了，也就是我们博客的样子~。" target="_blank" rel="external">http://0.0.0.0:4000]，就能看到刚才部署的页面了，也就是我们博客的样子~。</a></p>
 <p>现在只能本地访问，如果我们希望其他人也能看到，就需要将网页部署到某个服务器上去。我选择了github,其他方式操作应该是类似。</p>
-<p>#####部署</p>
-<p>首先需要注册一个github的账号，然后follow <a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>这上面的步骤，我们就能获得一个类似于<br><a href="http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。" target="_blank" rel="external">http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。</a><br>这时，打开根目录下的<strong>_config.yml</strong>，在上文提到过的<em>url:</em>后填入<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">http:</span><span class="comment">//username.github.io #对应你自己的地址</span></span><br><span class="line"><span class="string">root:</span> /</span><br></pre></td></tr></table></figure></p>
+<h5 id="部署">部署</h5><p>首先需要注册一个github的账号，然后follow <a href="https://pages.github.com" target="_blank" rel="external">Github Page</a>这上面的步骤，我们就能获得一个类似于<br><a href="http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。" target="_blank" rel="external">http://username.github.io的域名地址。同时也在我们的github主页上建了一个对应的repository，用来存放我们的页面内容。</a><br>这时，打开根目录下的<strong>_config.yml</strong>，在上文提到过的<em>url:</em>后填入<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">url:</span> <span class="string">http:</span><span class="comment">//username.github.io #对应你自己的地址</span></span><br><span class="line"><span class="string">root:</span> /</span><br></pre></td></tr></table></figure></p>
 <p>在文件底部的<em>deploy</em>填入：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: &lt;repositoty url&gt; <span class="comment">#前面获得域名时创建的repository地址</span></span><br><span class="line">    branch: [branch] <span class="comment">#要发布内容的分支，一般是master</span></span><br><span class="line">    <span class="keyword">message</span>: [<span class="keyword">message</span>] <span class="comment">##自定义提交信息，留空就可以。</span></span><br></pre></td></tr></table></figure>
 <p>这时我们再打开terminal，输入</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">d</span> -<span class="keyword">g</span></span><br></pre></td></tr></table></figure>
 <p>网页就部署到<a href="http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。" target="_blank" rel="external">http://username.github.io上了，稍等几分钟，在地址栏输入，就能访问博客。</a></p>
 <p>至此，博客建站完毕:-D</p>
-<p>#####写博客</p>
-<p>怎么写就很简单了，在前文提过的source文件夹下，新建一个 *.md文件，想写的内容填进去，重新生成、部署，稍等一小会会，就能看到我们更新的博客啦。</p>
+<h5 id="写博客">写博客</h5><p>怎么写就很简单了，在前文提过的source文件夹下，新建一个 *.md文件，想写的内容填进去，重新生成、部署，稍等一小会会，就能看到我们更新的博客啦。</p>
 <p>#####其他插件<br>其他还有一些博客的管理内容，比如google analytical统计，disqus评论栏，都可以很简单的添加到页面中。</p>
 ]]></content>
     <summary type="html">
