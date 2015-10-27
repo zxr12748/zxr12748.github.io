@@ -4,7 +4,7 @@
   <subtitle><![CDATA[you can do more than you think]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="https://zxr12748.github.io/"/>
-  <updated>2015-10-26T16:00:45.000Z</updated>
+  <updated>2015-10-27T14:40:16.000Z</updated>
   <id>https://zxr12748.github.io/</id>
   
   <author>
@@ -19,18 +19,18 @@
     <link href="https://zxr12748.github.io/2015/10/26/light-field/"/>
     <id>https://zxr12748.github.io/2015/10/26/light-field/</id>
     <published>2015-10-26T13:06:46.000Z</published>
-    <updated>2015-10-26T16:00:45.000Z</updated>
+    <updated>2015-10-27T14:40:16.000Z</updated>
     <content type="html"><![CDATA[<h3 id="1-什么是光场？">1.什么是光场？</h3><p>&#160;&#160;&#160;&#160;简单的说，光场就是光线，它包含光线本身的强度、位置和方向等信息。一般采用两个相互平行的平面来表征光场，如图所示</p>
-<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevzbkm9lj20g505y74b.jpg" alt="" title="光场的双平面特征"></center><br>若一条光线通过两个平面UV和ST所产生的交点坐标分别为(u,v)和(s,t)，此时就可以通过光场函数L(u,v,s,t)来表示这条光线的分布。L代表光线的强度，而(u,v)和(s,t)共同确定了光线在空间中分布的位置和方向。<br><a id="more"></a><br>&#160;&#160;&#160;&#160;为什么要用这种双平面的方式来确定光场的分布呢？这是因为常规的相机一般都可以简化成两个互相平行的平面——镜头的光瞳面和图像传感器所在的像平面。对于常规的相机来说，每个像素记录了整个镜头所出射光线会聚在一个位置上的强度，如图所示.<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevv091khj209b08eq36.jpg" alt="" title="传统相机工作原理"></center>所以，传统的相机只能获取一个像平面的图像。而如果能够获取到整个相机内的光场分布情况，我们就可以将光线重新投影到一个虚拟的像平面上，计算出这个新的像平面上所产生的图像。光场相机的目的就在于对相机的光场分布进行记录。<br><br>### 2.光场相机是怎么工作的？<br>&#160;&#160;&#160;&#160;光场相机由镜头、微透镜阵列和图像传感器组成，其中微透镜阵列是多个微透镜单元所组成的二维阵列。镜头的光瞳面（UV面）和图像传感器的光敏面（XY面）关于微透镜阵列（ST）成共轭关系，也就是说，镜头经过每个微透镜单元都会投影到图像传感器上形成一个小的微透镜子图像。每个微透镜子图像包含了若干个像素，此时各像素所记录的光线强度就来自于一个微透镜和镜头的一个子孔径区域之间所限制的细光束，如图。<center><img src="http://ww4.sinaimg.cn/mw690/4780cba9jw1exevvoi569j20gp093q3l.jpg" alt="" title="光场相机的光学结构"></center>这里的细光束也就是光场的离散采样形式，通过微透镜单元的坐标ST和镜头子孔径的坐标UV即能够确定每个细光束的位置和方向，获得L(u,v,s,t)的分布。<br><br>### 3.怎么实现数字对焦？<br>&#160;&#160;&#160;&#160;正如前面所说，获得相机内的光场分布后，就可以重新选择一个虚拟的像平面（如图，<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevwoau4dj20an04x74k.jpg" alt="" title="利用光场进行数字对焦"></center><center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevwyrtsej208704ujrl.jpg" alt="" title="利用光场进行数字对焦"></center>可以选择更远或更近的像面位置），计算出所有的光线在这个平面上的交点位置和能量分布，从而就得到了一幅新像面上的图像。这个过程等价于传统相机的调焦过程，只不过是通过数字计算来实现，因而被称为数字调焦。<br>&#160;&#160;&#160;&#160;利用光场相机的数字调焦能力，只需要一次曝光就可以计算出不同像平面位置的图像，能够实现大光圈条件下的快速对焦。更进一步，利用不同深度平面的图像序列，可以完成全景深图像合成、三维深度估计等功能。<br><br>### 4.对焦示例<br><center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exevx8n6ucj207c04ymx9.jpg" alt="" title="原始对焦位置: 书"></center><center>原始对焦位置在书上</center><br><center><img src="http://ww2.sinaimg.cn/mw690/4780cba9jw1exevy46hzoj207c04ydfx.jpg" alt="" title="数字调焦到近处"></center><center>数字调焦到近处</center><br><center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exevyccjylj207e04y0st.jpg" alt="" title="数字调焦到远处"></center><center>数字调焦到远处</center>
+<center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exg2ixxp73j20g505y3yl.jpg" alt="" title="光场的双平面特征"></center><br>若一条光线通过两个平面UV和ST所产生的交点坐标分别为(u,v)和(s,t)，此时就可以通过光场函数L(u,v,s,t)来表示这条光线的分布。L代表光线的强度，而(u,v)和(s,t)共同确定了光线在空间中分布的位置和方向。<br><a id="more"></a><br>&#160;&#160;&#160;&#160;为什么要用这种双平面的方式来确定光场的分布呢？这是因为常规的相机一般都可以简化成两个互相平行的平面——镜头的光瞳面和图像传感器所在的像平面。对于常规的相机来说，每个像素记录了整个镜头所出射光线会聚在一个位置上的强度，如图所示.<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exg2jozhk9j209b08eq39.jpg" alt="" title="传统相机工作原理"></center>所以，传统的相机只能获取一个像平面的图像。而如果能够获取到整个相机内的光场分布情况，我们就可以将光线重新投影到一个虚拟的像平面上，计算出这个新的像平面上所产生的图像。光场相机的目的就在于对相机的光场分布进行记录。<br><br>### 2.光场相机是怎么工作的？<br>&#160;&#160;&#160;&#160;光场相机由镜头、微透镜阵列和图像传感器组成，其中微透镜阵列是多个微透镜单元所组成的二维阵列。镜头的光瞳面（UV面）和图像传感器的光敏面（XY面）关于微透镜阵列（ST）成共轭关系，也就是说，镜头经过每个微透镜单元都会投影到图像传感器上形成一个小的微透镜子图像。每个微透镜子图像包含了若干个像素，此时各像素所记录的光线强度就来自于一个微透镜和镜头的一个子孔径区域之间所限制的细光束，如图。<center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exg2ksejkpj20gp093mxu.jpg" alt="" title="光场相机的光学结构"></center>这里的细光束也就是光场的离散采样形式，通过微透镜单元的坐标ST和镜头子孔径的坐标UV即能够确定每个细光束的位置和方向，获得L(u,v,s,t)的分布。<br><br>### 3.怎么实现数字对焦？<br>&#160;&#160;&#160;&#160;正如前面所说，获得相机内的光场分布后，就可以重新选择一个虚拟的像平面（如图，<center><img src="http://ww4.sinaimg.cn/mw690/4780cba9jw1exg2k6rtafj20an04xjrp.jpg" alt="" title="利用光场进行数字对焦"></center><center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exg2l8f6ctj208704umxe.jpg" alt="" title="利用光场进行数字对焦"></center>可以选择更远或更近的像面位置），计算出所有的光线在这个平面上的交点位置和能量分布，从而就得到了一幅新像面上的图像。这个过程等价于传统相机的调焦过程，只不过是通过数字计算来实现，因而被称为数字调焦。<br>&#160;&#160;&#160;&#160;利用光场相机的数字调焦能力，只需要一次曝光就可以计算出不同像平面位置的图像，能够实现大光圈条件下的快速对焦。更进一步，利用不同深度平面的图像序列，可以完成全景深图像合成、三维深度估计等功能。<br><br>### 4.对焦示例<br><center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exg2lkra5fj207c04yaa6.jpg" alt="" title="原始对焦位置: 书"></center><center>原始对焦位置在书上</center><br><center><img src="http://ww2.sinaimg.cn/mw690/4780cba9jw1exg2ly0idnj207c04y0su.jpg" alt="" title="数字调焦到近处"></center><center>数字调焦到近处</center><br><center><img src="http://ww4.sinaimg.cn/mw690/4780cba9jw1exg2mageg4j207e04ymx9.jpg" alt="" title="数字调焦到远处"></center><center>数字调焦到远处</center>
 
 
 
 <h4 id="参考资料">参考资料</h4><p>周志良. 光场成像技术研究[D]. 中国科学技术大学, 2012.</p>
-<p><em>本文所有图片文字纯属原创，如有雷同，你抄我的:-D</em></p>
+<p>版权申明:<em>本文所有图片文字纯属原创，如有雷同，你抄我的:-D</em></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="1-什么是光场？">1.什么是光场？</h3><p>&#160;&#160;&#160;&#160;简单的说，光场就是光线，它包含光线本身的强度、位置和方向等信息。一般采用两个相互平行的平面来表征光场，如图所示</p>
-<center><img src="http://ww1.sinaimg.cn/mw690/4780cba9jw1exevzbkm9lj20g505y74b.jpg" alt="" title="光场的双平面特征"></center><br>若一条光线通过两个平面UV和ST所产生的交点坐标分别为(u,v)和(s,t)，此时就可以通过光场函数L(u,v,s,t)来表示这条光线的分布。L代表光线的强度，而(u,v)和(s,t)共同确定了光线在空间中分布的位置和方向。<br>]]>
+<center><img src="http://ww3.sinaimg.cn/mw690/4780cba9jw1exg2ixxp73j20g505y3yl.jpg" alt="" title="光场的双平面特征"></center><br>若一条光线通过两个平面UV和ST所产生的交点坐标分别为(u,v)和(s,t)，此时就可以通过光场函数L(u,v,s,t)来表示这条光线的分布。L代表光线的强度，而(u,v)和(s,t)共同确定了光线在空间中分布的位置和方向。<br>]]>
     
     </summary>
     
